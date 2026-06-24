@@ -34,6 +34,7 @@
             heading:   '#2d2a26',
             body:      '#2d2a26',
             sub:       '#6f655a',
+            line:      'rgba(45,42,38,0.12)',
           },
           fontFamily: {
             sans: ['Zen Maru Gothic', 'Noto Sans JP', 'sans-serif'],
@@ -53,6 +54,7 @@
       <ul class="hidden md:flex gap-8 text-sm text-sub">
         <li><a href="#about"    class="hover:text-accent transition-colors">自己紹介</a></li>
         <li><a href="#services" class="hover:text-accent transition-colors">サービス</a></li>
+        <li><a href="#pricing"  class="hover:text-accent transition-colors">料金</a></li>
         <li><a href="#works"    class="hover:text-accent transition-colors">実績</a></li>
         <li><a href="#contact"  class="hover:text-accent transition-colors">お問い合わせ</a></li>
       </ul>
@@ -66,6 +68,7 @@
       <ul class="px-4 py-4 flex flex-col gap-4 text-sm">
         <li><a href="#about"    class="block text-sub hover:text-accent transition-colors">自己紹介</a></li>
         <li><a href="#services" class="block text-sub hover:text-accent transition-colors">サービス</a></li>
+        <li><a href="#pricing"  class="block text-sub hover:text-accent transition-colors">料金</a></li>
         <li><a href="#works"    class="block text-sub hover:text-accent transition-colors">実績</a></li>
         <li><a href="#contact"  class="block text-sub hover:text-accent transition-colors">お問い合わせ</a></li>
       </ul>
@@ -81,8 +84,8 @@
       </h1>
       <p class="text-sub text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
         いろんな現場を渡り歩いてきた、石川県の個人事業主です。<br>
-        スプレッドシート整理・かんたんな自動化・サイト制作で、<br>
-        毎日の「ひと手間」をそっと減らすお手伝いをしています。
+        得意なのは <span class="text-accent font-bold">スプレッドシート整理と、GASを使った業務の自動化</span>。<br>
+        毎日の「めんどくさい作業」を、そっと減らすお手伝いをしています。
       </p>
       <!-- ▼ クラウドワークスへのリンク -->
       <a href="https://crowdworks.jp/public/employees/6871635"
@@ -164,7 +167,7 @@
       <div class="fade-in text-center mb-16">
         <p class="font-hand text-accent text-lg mb-2">Services</p>
         <h2 class="text-3xl md:text-4xl font-bold text-heading">提供サービス</h2>
-        <p class="text-sub mt-4 max-w-xl mx-auto">派手なことはできませんが、「確実にできること」を一つひとつ丁寧に仕上げます</p>
+        <p class="text-sub mt-4 max-w-xl mx-auto">中心は「スプレッドシート・GASによる業務の自動化」。派手なことはできませんが、確実にできることを一つひとつ丁寧に仕上げます。</p>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-6">
@@ -173,31 +176,70 @@
           <div class="text-accent text-3xl mb-5"><i class="fas fa-table"></i></div>
           <h3 class="text-heading font-bold text-lg mb-3">スプレッドシート整理</h3>
           <p class="text-sub text-sm leading-relaxed">関数の修正・プルダウン設定・条件付き書式・集計グラフ化。「なんとなく使っている表」を、実際に使いやすい形に整えます。</p>
+          <p class="text-accent text-sm font-bold mt-4"><i class="fas fa-arrow-right-long mr-1"></i>探す・直すストレスが減って、そのまま使える表に</p>
         </div>
         <!-- サービスカード② フォーム×自動通知 -->
         <div class="service-card soft-card fade-in p-8 rounded-2xl">
           <div class="text-accent text-3xl mb-5"><i class="fas fa-bell"></i></div>
           <h3 class="text-heading font-bold text-lg mb-3">フォーム × 自動通知の仕組みづくり</h3>
           <p class="text-sub text-sm leading-relaxed">Googleフォームとスプレッドシートを連携し、回答が来たらLINEやメールに自動で通知する仕組みを作ります。</p>
+          <p class="text-accent text-sm font-bold mt-4"><i class="fas fa-arrow-right-long mr-1"></i>問い合わせの見逃し・対応漏れがなくなる</p>
         </div>
         <!-- サービスカード③ GAS自動化 -->
         <div class="service-card soft-card fade-in p-8 rounded-2xl">
           <div class="text-accent text-3xl mb-5"><i class="fas fa-robot"></i></div>
           <h3 class="text-heading font-bold text-lg mb-3">GAS 定型作業の自動化</h3>
           <p class="text-sub text-sm leading-relaxed">Google Apps Script を使い、毎日同じことをする手作業を自動化します。「毎朝コピペしている作業」などご相談ください。</p>
+          <p class="text-accent text-sm font-bold mt-4"><i class="fas fa-arrow-right-long mr-1"></i>毎朝の手作業が、ボタンひとつ・または全自動に</p>
         </div>
         <!-- サービスカード④ かんたんなサイト制作・修正 -->
         <div class="service-card soft-card fade-in p-8 rounded-2xl">
           <div class="text-accent text-3xl mb-5"><i class="fas fa-laptop-code"></i></div>
           <h3 class="text-heading font-bold text-lg mb-3">かんたんなサイト制作・修正</h3>
           <p class="text-sub text-sm leading-relaxed">1ページのシンプルなサイトやランディングページなら、制作からお引き受けします。既存サイトの「ここだけ直したい」という小さな修正・更新ももちろん歓迎です。</p>
+          <p class="text-accent text-sm font-bold mt-4"><i class="fas fa-arrow-right-long mr-1"></i>「ここだけ直したい」が、すぐ形になる</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ========== 料金の目安セクション ========== -->
+  <section id="pricing" class="py-24 bg-section">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="fade-in text-center mb-12">
+        <p class="font-hand text-accent text-lg mb-2">Price</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-heading">料金の目安</h2>
+        <p class="text-sub mt-4 max-w-xl mx-auto">内容によって変わるので、あくまで目安です。お見積もりは無料。まずはお気軽にご相談ください。</p>
+      </div>
+
+      <div class="soft-card fade-in rounded-2xl px-6 sm:px-8 py-2 divide-y divide-line">
+        <div class="flex items-center justify-between gap-4 py-4">
+          <span class="text-heading font-medium text-sm sm:text-base">スプレッドシート整理・関数設定</span>
+          <span class="text-heading font-bold whitespace-nowrap">¥5,000〜</span>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-4">
+          <span class="text-heading font-medium text-sm sm:text-base">既存サイトの小さな修正・更新</span>
+          <span class="text-heading font-bold whitespace-nowrap">¥5,000〜</span>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-4">
+          <span class="text-heading font-medium text-sm sm:text-base">フォーム → LINE / メール通知の仕組み</span>
+          <span class="text-heading font-bold whitespace-nowrap">¥10,000〜</span>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-4">
+          <span class="text-heading font-medium text-sm sm:text-base">GAS 定型作業の自動化</span>
+          <span class="text-heading font-bold whitespace-nowrap">¥10,000〜</span>
+        </div>
+        <div class="flex items-center justify-between gap-4 py-4">
+          <span class="text-heading font-medium text-sm sm:text-base">かんたんな1ページサイト・LP制作</span>
+          <span class="text-heading font-bold whitespace-nowrap">¥30,000〜</span>
+        </div>
+      </div>
+      <p class="text-sub text-xs text-center mt-4">※最短2〜3日〜（内容・混み具合により前後します）／継続のご依頼はご相談ください</p>
+    </div>
+  </section>
+
   <!-- ========== 実績セクション ========== -->
-  <section id="works" class="py-24 bg-section">
+  <section id="works" class="py-24 bg-base">
     <div class="max-w-5xl mx-auto px-4">
       <div class="fade-in text-center mb-16">
         <p class="font-hand text-accent text-lg mb-2">Works</p>
@@ -352,6 +394,33 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== お客様の声セクション ========== -->
+  <section id="voice" class="py-24 bg-section">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="fade-in text-center mb-12">
+        <p class="font-hand text-accent text-lg mb-2">Voice</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-heading">お客様の声</h2>
+        <p class="text-sub mt-4 max-w-xl mx-auto">いただいた声を、これから少しずつ掲載していきます。</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- 空き枠（最初のお客様募集中） -->
+        <div class="fade-in rounded-2xl p-8 border-2 border-dashed border-accent/25 text-center">
+          <i class="fas fa-quote-left text-accent/40 text-2xl mb-3"></i>
+          <p class="text-sub text-sm leading-relaxed">最初のお客様の声を、<br>ここに掲載予定です。</p>
+        </div>
+        <div class="fade-in rounded-2xl p-8 border-2 border-dashed border-accent/25 text-center">
+          <i class="fas fa-quote-left text-accent/40 text-2xl mb-3"></i>
+          <p class="text-sub text-sm leading-relaxed">ご依頼、お待ちしています。<br>一件一件、丁寧に取り組みます。</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <p class="signature text-lg">まだ駆け出しですが、心を込めて。</p>
       </div>
     </div>
   </section>
