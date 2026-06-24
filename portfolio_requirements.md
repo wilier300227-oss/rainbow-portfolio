@@ -116,15 +116,20 @@ works/
 ### 実績②：スプレッドシート整理デモ
 - **内容**：関数・条件付き書式・プルダウン・集計グラフを活用したサンプルシート
 - **公開方法**：Googleスプレッドシートの共有リンク（実際に触れるデモ）
-- **技術タグ**：Google Sheets
-- **状態**：未着手
+- **技術タグ**：Google Sheets / GAS / 関数 / 条件付き書式
+- **生成スクリプト**：`works/gas/create_sales_demo.gs`（GASで一括生成）
+- **共有リンク**：https://docs.google.com/spreadsheets/d/1eZihpxO8mPvhS5sYRA93KMPmNcGuLeEAMy8R3As0XgU/edit?usp=sharing
+- **スクリーンショット**：`works/images/work-spreadsheet.png`
+- **状態**：✅ 公開完了（ポートフォリオカード差し替え済み）
 
 ### 実績③：GAS自動化デモ
 - **内容**：Googleフォーム送信 → スプレッドシート記録 → LINE通知、の自動化フロー
 - **公開方法**：GitHubにコード公開 + README
-- **注意**：GASコードにLINEトークン等をハードコードしない（PropertiesServiceで管理）
+- **注意**：GASコードにLINEトークン等をハードコードしない（PropertiesServiceで管理）→ 対応済み
 - **技術タグ**：GAS / Google Forms / LINE API
-- **状態**：未着手
+- **GitHubリポジトリ**：https://github.com/wilier300227-oss/gas-form-line-notify （Public）
+- **ローカル**：`C:\Users\81909\Desktop\gas-form-line-notify\`（main.gs / setup.gs / README.md）
+- **状態**：✅ 公開完了（ポートフォリオカード差し替え済み）
 
 ### 実績④：jimoty-alert（リユース品価格調査ツール）
 - **説明文**（確定）：「ジモティーの新着投稿をGemini Vision AIで自動解析し、フリマ相場と照合・LINE通知するリユース品価格調査ツールを開発・運用中」
@@ -193,12 +198,12 @@ works/
 | 日 | 作業内容 | 完了目標 |
 |----|---------|---------|
 | Day 1 | ✅ GitHubリポジトリ作成・push → jimoty-alert README作成・Private化 → GitHub Pages有効化 | 完了 |
-| Day 2 | RAINBOW HP 未完成箇所の洗い出し・修正（個人情報・APIキー・デザイン） | RAINBOW HP修正完了 |
-| Day 3 | RAINBOW HP セキュリティ最終確認 → GitHub push → ポートフォリオに⑤カード追加 | ⑤公開 |
-| Day 4 | スプレッドシート整理デモ作成・共有リンク取得 → ポートフォリオ更新 | ②公開 |
-| Day 5 | GASデモ作成・GitHub push・README → ポートフォリオ更新 | ③公開 |
-| Day 6 | DXページ個人再制作（前半：構成・ヒーロー・3ステップ） | 前半完成 |
-| Day 7 | DXページ個人再制作（後半：サービスカード・仕上げ）→ ポートフォリオ更新 | ①公開 |
+| Day 2 | ✅ RAINBOW HP 修正・GitHub Pages公開・⑤カード追加・スクショ追加・SNS無効化・ダミー化 | ⑤公開 完了 |
+| Day 3 | ✅ スプレッドシート整理デモ作成（GAS生成）・共有リンク取得・②カード差し替え | ②公開 完了 |
+| Day 4 | ✅ GASデモ（フォーム→LINE通知）作成・GitHub公開・③カード差し替え | ③公開 完了 |
+| Day 5 | DXページ個人再制作（前半：構成・ヒーロー・3ステップ） | 前半完成 |
+| Day 6 | DXページ個人再制作（後半：サービスカード・仕上げ）→ ①公開 | ①公開 |
+| Day 7 | ④jimoty-alert スクリーンショット撮影・カード差し替え／予備日 | ④掲載 |
 
 **Week 1終了時点：実績①②③⑤が揃い、④⑥はスクリーンショット掲載で暫定公開**
 
