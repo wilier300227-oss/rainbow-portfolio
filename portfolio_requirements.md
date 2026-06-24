@@ -161,7 +161,9 @@ works/
 - **PWAアイコン**：`icon-192/512.png` は白い音符のオリジナル（問題なし）
 - **技術タグ**：HTML / JS / Canvas / Web Audio / SVM（音声認識）/ PWA
 - **ポートフォリオ素材**：`works/images/work-onpu.png`（ゲーム画面＋シール帳のスマホ2画面合成）
-- **状態**：✅ 著作権修正完了・Web版完成・⑥カード掲載完了。残：Privateリポジトリへのpush（任意）
+- **Privateリポジトリ（クリーン版）**：https://github.com/wilier300227-oss/onpu-challenge-web （Private・著作権修正済み）
+- **⚠️ 旧Privateリポジトリ**：`wilier300227-oss/onpu-challenge`（2026-06-20作成）には**著作権シールが残ったまま**。今回は別名で新規作成したため未対応。将来削除/差し替え推奨
+- **状態**：✅ 著作権修正完了・Web版完成・⑥カード掲載完了・Privateリポジトリpush完了
 
 ---
 
