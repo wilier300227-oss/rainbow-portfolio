@@ -1,5 +1,6 @@
 # ポートフォリオサイト 要件定義・ロードマップ
 # 作成：2026年6月24日（Claude Codeによるgrilling要件定義セッション）
+# 更新：2026年6月24日（公開方針変更・jimoty-alert/おんぷチャレンジをPrivate化）
 
 ---
 
@@ -21,7 +22,7 @@
 | 公開先 | GitHub Pages |
 | GitHubアカウント | wilier300227-oss |
 | リポジトリ名 | rainbow-portfolio |
-| 公開URL（予定） | https://wilier300227-oss.github.io/rainbow-portfolio/ |
+| 公開URL | https://wilier300227-oss.github.io/rainbow-portfolio/ |
 | クラウドワークスURL | https://crowdworks.jp/public/employees/6871635?ref=login_header |
 
 ---
@@ -35,6 +36,21 @@
 ### 公開方針
 - **すべての実績が完成してから公開**
 - 目標：2週間（8時間/日）で全完成
+
+### 制作物の公開方針（重要）
+
+制作物によって「自分が使う用（実用版）」と「ポートフォリオ用（公開版）」を分ける。
+
+| 区分 | 対象 | 方針 |
+|------|------|------|
+| **コード公開** | ①DXページ・②スプレッドシート・③GASデモ | GitHubにコードを公開 |
+| **スクリーンショット公開** | ④jimoty-alert・⑥おんぷチャレンジ | リポジトリはPrivate。ポートフォリオには動作画面のスクリーンショット＋技術スタック＋説明文のみ掲載 |
+| **サイト公開** | ⑤RAINBOW HP | GitHub Pagesで公開（個人情報・APIキーなしを確認の上） |
+
+**スクリーンショット公開にする理由：**
+- jimoty-alert：Mercari・Yahoo!オークションのスクレイピングが利用規約に抵触する可能性
+- おんぷチャレンジ：著作権素材の置き換え完了前は非公開。完了後もコードより動作デモで見せる方が効果的
+- 実用ツールはコードを公開すると機能を制限せざるを得ない（使う側も困る）
 
 ### 技術構成
 - 純粋なHTML / CSS / JS（フレームワーク・ビルドツール不要）
@@ -69,7 +85,7 @@
 
 ## 3. 現在の骨格ファイル
 
-`C:\Users\81909\Desktop\works\` に以下が存在（別セッションで作成済み）：
+`C:\Users\81909\Desktop\works\` に以下が存在（別セッションで作成済み・GitHub push済み）：
 
 ```
 works/
@@ -77,13 +93,14 @@ works/
   css/style.css
   js/main.js
   images/       ← 空（スクリーンショットは本人が後で差し替え）
+  portfolio_requirements.md ← このファイル
 ```
 
 **index.htmlの現状：**
 - クラウドワークスURLはすでに正しく埋め込み済み
 - 実績カード4枠（①〜④）あり。②③④は「準備中」表示
-- ④jimoty-alertの説明文に「転売」の表記あり → 修正必要
-- ⑤RAINBOW HP・⑥おんぷチャレンジのカードはまだない
+- ④jimoty-alertの説明文：「転売」→「リユース品価格調査ツール」に修正済み
+- ⑤RAINBOW HP・⑥おんぷチャレンジのカードはまだない（追加必要）
 
 ---
 
@@ -93,36 +110,38 @@ works/
 - **内容**：職業訓練グループ制作版を参考に、個人で一から再制作
 - **注意**：グループ制作版（custom_ec_site）のコードは直接使わない。構成・デザインの参考のみ
 - **技術タグ**：Astro / TailwindCSS / HTML / CSS
+- **公開方法**：GitHubにコード公開 + デモURL
 - **状態**：未着手（再制作必要）
 
 ### 実績②：スプレッドシート整理デモ
 - **内容**：関数・条件付き書式・プルダウン・集計グラフを活用したサンプルシート
-- **公開方法**：Googleスプレッドシートの共有リンク
+- **公開方法**：Googleスプレッドシートの共有リンク（実際に触れるデモ）
 - **技術タグ**：Google Sheets
 - **状態**：未着手
 
 ### 実績③：GAS自動化デモ
 - **内容**：Googleフォーム送信 → スプレッドシート記録 → LINE通知、の自動化フロー
-- **公開方法**：GitHubにコード公開 + README + Googleスプレッドシート共有リンク
-- **注意**：GASコードにLINEトークン等をハードコードしない
+- **公開方法**：GitHubにコード公開 + README
+- **注意**：GASコードにLINEトークン等をハードコードしない（PropertiesServiceで管理）
 - **技術タグ**：GAS / Google Forms / LINE API
 - **状態**：未着手
 
 ### 実績④：jimoty-alert（リユース品価格調査ツール）
-- **説明文**（確定）：
-  「ジモティーの新着投稿をGemini Vision AIで自動解析し、フリマ相場と照合・LINE通知するリユース品価格調査ツールを開発・運用中」
+- **説明文**（確定）：「ジモティーの新着投稿をGemini Vision AIで自動解析し、フリマ相場と照合・LINE通知するリユース品価格調査ツールを開発・運用中」
 - **注意**：「転売」という表現は使わない。「リユース品価格調査」に統一
 - **技術タグ**：Python / Gemini Vision API / LINE Messaging API / Playwright / SQLite
 - **場所**：`C:\Users\81909\Desktop\jimoty-alert\`
-- **GitHubリポジトリ**：wilier300227-oss（別リポジトリで公開）
+- **公開方法**：リポジトリはPrivate（コード非公開）。ポートフォリオにはスクリーンショット＋技術スタック＋説明文のみ
+- **GitHubリポジトリ**：`wilier300227-oss/jimoty-alert`（Private済み）
 - **セキュリティ対応済み**：`.gitignore`・`.env.example` 作成済み
 - **現在の稼働状況**：稼働中（Facebook機能は一時無効化中）
-- **状態**：README作成 + GitHub push のみ必要
+- **状態**：✅ Private化完了。ポートフォリオカード用スクリーンショット撮影が必要
 
 ### 実績⑤：RAINBOW合同会社サイト
 - **内容**：個人制作の架空会社HP。GSAP・アニメーション重め
-- **場所**：`C:\Users\81909\Desktop\RAINBOW（HP）\HTML\`（または解凍先）
+- **場所**：`C:\Users\81909\Desktop\RAINBOW（HP）.zip`（解凍先：`RAINBOW（HP）/HTML/`）
 - **技術タグ**：HTML / CSS / JS / GSAP / TailwindCDN / jQuery
+- **公開方法**：GitHub Pagesで公開（個人情報・APIキーなしを確認の上）
 - **確認事項**：個人情報・住所・電話番号・外部APIキーがないか確認してから公開
 - **状態**：セキュリティ確認 + GitHub push + GitHub Pages公開 が必要
 
@@ -130,9 +149,10 @@ works/
 - **内容**：子供向け音符学習アプリ（Web PWA版）
 - **場所**：`C:\Users\81909\OneDrive\piano.zip`（解凍先：`piano/`）
 - **現状**：Python + Tkinter のデスクトップ版が動作中。Web版の設計書（WEB_APP_PLAN.md）あり
+- **公開方法**：リポジトリはPrivate（コード非公開）。ポートフォリオには動作スクリーンショット＋技術スタック＋説明文のみ
 - **ブロッカー**：シール素材に著作権のあるものが含まれている → 著作権フリー素材に差し替えが必要
 - **技術タグ**：HTML / JS / Canvas / Web Audio / SVM（音声認識）/ PWA
-- **状態**：著作権修正 + Web版実装 が必要
+- **状態**：著作権修正 + Web版実装 が必要（リポジトリはPrivate運用）
 
 ---
 
@@ -141,8 +161,9 @@ works/
 ### jimoty-alert（`C:\Users\81909\Desktop\jimoty-alert\`）
 - [x] `.gitignore` 作成済み（.env / fb_session.json / *.db / logs/ 除外）
 - [x] `.env.example` 作成済み（ダミー値入り）
-- [ ] README.md 作成
-- [ ] GitHub push
+- [x] README.md 作成済み
+- [x] GitHubにpush済み（Privateリポジトリ）
+- [ ] ポートフォリオカード用スクリーンショット撮影（ログ画面・通知画面）
 - [ ] `[Flash] 自転車チェック失敗: 'parts'` 警告の修正（後回し可）
 - [ ] Facebook機能の恒久対応（後回し可）
 
@@ -156,7 +177,8 @@ works/
 - [ ] 著作権のあるシール素材を著作権フリーのものに差し替え
 - [ ] Pythonコード内にAPIキー・個人情報がないか確認
 - [ ] Web版実装
-- [ ] GitHub push / GitHub Pages公開
+- [ ] GitHubにpush（Privateリポジトリ）
+- [ ] ポートフォリオカード用スクリーンショット・デモ動画撮影
 
 ### GASデモ
 - [ ] LINEトークンをPropertiesServiceで管理（ハードコード禁止）
@@ -170,15 +192,15 @@ works/
 
 | 日 | 作業内容 | 完了目標 |
 |----|---------|---------|
-| Day 1 | GitHubリポジトリ作成 → worksフォルダpush → jimoty-alert README作成・説明文修正・GitHub push → GitHub Pages有効化・暫定公開 | ④公開・サイト暫定稼働 |
+| Day 1 | ✅ GitHubリポジトリ作成・push → jimoty-alert README作成・Private化 → GitHub Pages有効化 | 完了 |
 | Day 2 | RAINBOW HP 未完成箇所の洗い出し・修正（個人情報・APIキー・デザイン） | RAINBOW HP修正完了 |
-| Day 3 | RAINBOW HP セキュリティ最終確認 → GitHub push → ポートフォリオに⑤カード追加・公開 | ⑤公開 |
+| Day 3 | RAINBOW HP セキュリティ最終確認 → GitHub push → ポートフォリオに⑤カード追加 | ⑤公開 |
 | Day 4 | スプレッドシート整理デモ作成・共有リンク取得 → ポートフォリオ更新 | ②公開 |
 | Day 5 | GASデモ作成・GitHub push・README → ポートフォリオ更新 | ③公開 |
 | Day 6 | DXページ個人再制作（前半：構成・ヒーロー・3ステップ） | 前半完成 |
 | Day 7 | DXページ個人再制作（後半：サービスカード・仕上げ）→ ポートフォリオ更新 | ①公開 |
 
-**Week 1終了時点：実績①〜⑤が揃った状態でポートフォリオ公開**
+**Week 1終了時点：実績①②③⑤が揃い、④⑥はスクリーンショット掲載で暫定公開**
 
 ### Week 2 ── おんぷチャレンジ完成
 
@@ -189,41 +211,49 @@ works/
 | Day 10 | Web版フェーズ1後半：タッチボタン（ド〜シ）・採点・タイム・シール帳 | タッチ操作でフルプレイ可能 |
 | Day 11 | Web版フェーズ2：音声入力（VAD・MFCC・SVM移植） | 音声認識動作 |
 | Day 12 | Web版フェーズ3：PWA仕上げ・レスポンシブ調整・iOS Safari対応 | スマホ動作確認 |
-| Day 13 | 全制作物セキュリティ最終チェック → おんぷチャレンジ GitHub push → ポートフォリオに⑥追加 | ⑥公開 |
+| Day 13 | 全制作物セキュリティ最終チェック → おんぷチャレンジPrivate push → スクリーンショット撮影・ポートフォリオに⑥追加 | ⑥掲載 |
 | Day 14 | ポートフォリオ全体の表示確認・文言調整・スクショ差し替え → **完成公開** | 🎉 完成 |
 
 ### リスク管理
 
 | リスク | 対処 |
 |--------|------|
-| おんぷチャレンジ音声認識が重い | Day 11スキップ・タッチのみで⑥公開し音声は後回し |
+| おんぷチャレンジ音声認識が重い | Day 11スキップ・タッチのみで完成としスクリーンショット撮影 |
 | RAINBOW HPの修正が多い | Day 3を延長・GASデモをDay 6に後ろ倒し |
 | Day 7までに①〜⑤完成しなかった | ①DXページを「準備中」のまま残してWeek 2に回す |
 
 ---
 
-## 7. 次に着手するタスク
+## 7. Day 1 完了タスク（2026年6月24日）
 
-**Day 1の作業（GitHubリポジトリ作成から開始）：**
+- [x] `rainbow-portfolio` GitHubリポジトリ作成（Public）
+- [x] `C:\Users\81909\Desktop\works\` を push
+- [x] GitHub Pages 有効化（https://wilier300227-oss.github.io/rainbow-portfolio/）
+- [x] ④jimoty-alert 説明文「転売」→「リユース品価格調査ツール」修正
+- [x] jimoty-alert README.md 作成
+- [x] jimoty-alert GitHubにpush（Private）
+- [x] jimoty-alert ログに投稿時刻（時：分）表示を追加
 
-1. GitHubで `rainbow-portfolio` リポジトリ作成（Public）
-2. `C:\Users\81909\Desktop\works\` を git init → push
-3. `index.html` の④jimoty-alert説明文から「転売」を削除・「リユース品価格調査ツール」に修正
-4. `C:\Users\81909\Desktop\jimoty-alert\` の README.md 作成
-5. jimoty-alert リポジトリを GitHub push
-6. GitHub Pages 有効化（Settings → Pages → main/root）
-7. クラウドワークスプロフィールにURL記載
+## 8. 次に着手するタスク（Day 2）
+
+RAINBOW HPの整備：
+1. `C:\Users\81909\Desktop\RAINBOW（HP）.zip` を解凍
+2. 個人情報（本名・住所・電話番号・メールアドレス）がないか全ファイルを確認
+3. JSファイルにAPIキー・パスワードがハードコードされていないか確認
+4. 未完成箇所の洗い出し・修正
+5. GitHub新リポジトリ（`rainbow-company-hp` 等）にpush・GitHub Pages公開
+6. ポートフォリオの index.html に⑤RAINBOW HPカードを追加
 
 ---
 
-## 8. 参照ファイル一覧
+## 9. 参照ファイル一覧
 
 | ファイル | 場所 | 内容 |
 |---------|------|------|
 | 引き継ぎ文書（旧） | `C:\Users\81909\Downloads\portfolio_handoff.md` | 初期の制作方針 |
 | 職務経歴・スキル | `C:\Users\81909\Downloads\経歴、スキルまとめ(自分).md` | About・自己PR素材 |
-| ポートフォリオ骨格 | `C:\Users\81909\Desktop\works\` | index.html等（作成済み） |
-| jimoty-alert | `C:\Users\81909\Desktop\jimoty-alert\` | 稼働中・.gitignore済み |
-| RAINBOW HP | `C:\Users\81909\Desktop\RAINBOW（HP）.zip` | 個人制作会社サイト |
-| おんぷチャレンジ | `C:\Users\81909\OneDrive\piano.zip` | デスクトップ版+Web版設計書 |
+| ポートフォリオ骨格 | `C:\Users\81909\Desktop\works\` | index.html等（作成済み・GitHub push済み） |
+| jimoty-alert | `C:\Users\81909\Desktop\jimoty-alert\` | 稼働中・Private push済み |
+| RAINBOW HP | `C:\Users\81909\Desktop\RAINBOW（HP）.zip` | 個人制作会社サイト（Day 2で整備） |
+| おんぷチャレンジ | `C:\Users\81909\OneDrive\piano.zip` | デスクトップ版+Web版設計書（Week 2で整備） |
 | グループDXサイト | `C:\Users\81909\Desktop\custom_ec_site.zip` | 参考のみ・コード流用不可 |
