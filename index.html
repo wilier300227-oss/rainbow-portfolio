@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RAINBOW工房 | ポートフォリオ</title>
-  <meta name="description" content="スプレッドシート整理・GAS自動化・ホームページ修正。現場を知る個人事業主 RAINBOW工房のポートフォリオサイトです。">
+  <meta name="description" content="スプレッドシート整理・GAS自動化・かんたんなサイト制作。現場を知る個人事業主 RAINBOW工房のポートフォリオサイトです。">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts（本文＝丸ゴシック / アクセント＝手書き風） -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Yomogi&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,21 +20,24 @@
   <!-- 独自スタイル -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Tailwind カスタムカラー設定 -->
+  <!-- Tailwind カスタムカラー設定（紙・ノート風） -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            base:    '#1a1a2e',
-            section: '#16213e',
-            accent:  '#4f46e5',
-            'accent-h': '#6366f1',
-            body:    '#e2e8f0',
-            sub:     '#94a3b8',
+            base:      '#faf6f0',
+            section:   '#f3ece1',
+            surface:   '#fffdf9',
+            accent:    '#c2703d',
+            'accent-h':'#a85a2c',
+            heading:   '#2d2a26',
+            body:      '#2d2a26',
+            sub:       '#6f655a',
           },
           fontFamily: {
-            sans: ['Noto Sans JP', 'Inter', 'sans-serif'],
+            sans: ['Zen Maru Gothic', 'Noto Sans JP', 'sans-serif'],
+            hand: ['Yomogi', 'cursive'],
           }
         }
       }
@@ -46,25 +49,25 @@
   <!-- ナビゲーション -->
   <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="#hero" class="text-white font-bold text-lg tracking-wide">RAINBOW工房</a>
+      <a href="#hero" class="font-hand text-heading font-bold text-xl tracking-wide">RAINBOW工房</a>
       <ul class="hidden md:flex gap-8 text-sm text-sub">
-        <li><a href="#about"    class="hover:text-white transition-colors">自己紹介</a></li>
-        <li><a href="#services" class="hover:text-white transition-colors">サービス</a></li>
-        <li><a href="#works"    class="hover:text-white transition-colors">実績</a></li>
-        <li><a href="#contact"  class="hover:text-white transition-colors">お問い合わせ</a></li>
+        <li><a href="#about"    class="hover:text-accent transition-colors">自己紹介</a></li>
+        <li><a href="#services" class="hover:text-accent transition-colors">サービス</a></li>
+        <li><a href="#works"    class="hover:text-accent transition-colors">実績</a></li>
+        <li><a href="#contact"  class="hover:text-accent transition-colors">お問い合わせ</a></li>
       </ul>
       <!-- モバイルメニューボタン -->
-      <button id="menu-btn" class="md:hidden text-sub hover:text-white" aria-label="メニューを開く">
+      <button id="menu-btn" class="md:hidden text-sub hover:text-accent" aria-label="メニューを開く">
         <i class="fas fa-bars text-xl"></i>
       </button>
     </div>
     <!-- モバイルメニュー（スマホ用） -->
-    <div id="mobile-menu" class="hidden md:hidden bg-section border-t border-white/10">
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-line shadow-sm">
       <ul class="px-4 py-4 flex flex-col gap-4 text-sm">
-        <li><a href="#about"    class="block text-sub hover:text-white transition-colors">自己紹介</a></li>
-        <li><a href="#services" class="block text-sub hover:text-white transition-colors">サービス</a></li>
-        <li><a href="#works"    class="block text-sub hover:text-white transition-colors">実績</a></li>
-        <li><a href="#contact"  class="block text-sub hover:text-white transition-colors">お問い合わせ</a></li>
+        <li><a href="#about"    class="block text-sub hover:text-accent transition-colors">自己紹介</a></li>
+        <li><a href="#services" class="block text-sub hover:text-accent transition-colors">サービス</a></li>
+        <li><a href="#works"    class="block text-sub hover:text-accent transition-colors">実績</a></li>
+        <li><a href="#contact"  class="block text-sub hover:text-accent transition-colors">お問い合わせ</a></li>
       </ul>
     </div>
   </nav>
@@ -72,8 +75,8 @@
   <!-- ========== ヒーローセクション ========== -->
   <section id="hero" class="min-h-screen flex items-center justify-center text-center px-4 pt-20">
     <div class="fade-in">
-      <p class="text-accent text-sm font-semibold tracking-widest mb-4 uppercase">RAINBOW工房 / 個人事業主</p>
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+      <p class="font-hand text-accent text-lg mb-4">RAINBOW工房 / 個人事業主</p>
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-heading leading-tight mb-6">
         現場を知っているから、<br>「めんどくさい」が分かります。
       </h1>
       <p class="text-sub text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
@@ -85,7 +88,7 @@
       <a href="https://crowdworks.jp/public/employees/6871635"
          target="_blank"
          rel="noopener noreferrer"
-         class="inline-block bg-accent hover:bg-accent-h text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200 text-base">
+         class="btn-accent inline-block bg-accent hover:bg-accent-h text-white font-bold px-8 py-4 rounded-xl transition-colors duration-200 text-base">
         クラウドワークスで依頼する
         <i class="fas fa-arrow-right ml-2"></i>
       </a>
@@ -96,14 +99,14 @@
   <section id="about" class="py-24 bg-section">
     <div class="max-w-4xl mx-auto px-4">
       <div class="fade-in text-center mb-16">
-        <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-3">About</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">自己紹介</h2>
+        <p class="font-hand text-accent text-lg mb-2">About</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-heading">自己紹介</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <!-- 左：プロフィールテキスト -->
         <div class="fade-in">
-          <h3 class="text-xl font-bold text-white mb-4">むずかしい言葉は、使いません</h3>
+          <h3 class="text-xl font-bold text-heading mb-4">むずかしい言葉は、使いません</h3>
           <p class="text-sub leading-relaxed mb-6">
             電気工事、便利屋、自転車整備……これまで30近くの現場で働いてきました。
             一つの仕事を長く、というタイプではなかったのですが、
@@ -114,37 +117,38 @@
             まずは「毎朝これが地味に面倒で…」という愚痴のようなことから、
             じっくり聞かせてください。そこをほぐすのが私の仕事だと思っています。
           </p>
-          <p class="text-sub leading-relaxed">
+          <p class="text-sub leading-relaxed mb-6">
             華やかな経歴ではありませんが、
             分からないことを分かったフリでごまかさない——そこだけは約束します。
           </p>
+          <p class="signature text-2xl">どんな小さなことでも、お気軽に。</p>
         </div>
 
         <!-- 右：強みカード -->
         <div class="fade-in flex flex-col gap-4">
-          <div class="strength-card p-5 rounded-lg border border-white/10">
+          <div class="strength-card soft-card p-5 rounded-2xl">
             <div class="flex items-start gap-4">
               <i class="fas fa-hammer text-accent text-xl mt-1"></i>
               <div>
-                <h4 class="text-white font-semibold mb-1">いろんな現場を見てきました</h4>
+                <h4 class="text-heading font-bold mb-1">いろんな現場を見てきました</h4>
                 <p class="text-sub text-sm">電気工事・便利屋・物流・小売など多業種の現場を経験。机の上だけでは分からない"リアル"を知っています。</p>
               </div>
             </div>
           </div>
-          <div class="strength-card p-5 rounded-lg border border-white/10">
+          <div class="strength-card soft-card p-5 rounded-2xl">
             <div class="flex items-start gap-4">
               <i class="fas fa-comments text-accent text-xl mt-1"></i>
               <div>
-                <h4 class="text-white font-semibold mb-1">ヒアリングから丁寧に</h4>
+                <h4 class="text-heading font-bold mb-1">ヒアリングから丁寧に</h4>
                 <p class="text-sub text-sm">個人事業主として顧客折衝の経験多数。「何が困っているか」を一緒に整理するところから始めます。</p>
               </div>
             </div>
           </div>
-          <div class="strength-card p-5 rounded-lg border border-white/10">
+          <div class="strength-card soft-card p-5 rounded-2xl">
             <div class="flex items-start gap-4">
               <i class="fas fa-certificate text-accent text-xl mt-1"></i>
               <div>
-                <h4 class="text-white font-semibold mb-1">取得資格</h4>
+                <h4 class="text-heading font-bold mb-1">取得資格</h4>
                 <p class="text-sub text-sm">第二種電気工事士・古物商許可・Webクリエイター能力認定試験エキスパートほか</p>
               </div>
             </div>
@@ -158,34 +162,34 @@
   <section id="services" class="py-24 bg-base">
     <div class="max-w-5xl mx-auto px-4">
       <div class="fade-in text-center mb-16">
-        <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Services</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">提供サービス</h2>
+        <p class="font-hand text-accent text-lg mb-2">Services</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-heading">提供サービス</h2>
         <p class="text-sub mt-4 max-w-xl mx-auto">派手なことはできませんが、「確実にできること」を一つひとつ丁寧に仕上げます</p>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-6">
         <!-- サービスカード① スプレッドシート整理 -->
-        <div class="service-card fade-in p-8 rounded-xl border border-white/10">
+        <div class="service-card soft-card fade-in p-8 rounded-2xl">
           <div class="text-accent text-3xl mb-5"><i class="fas fa-table"></i></div>
-          <h3 class="text-white font-bold text-lg mb-3">スプレッドシート整理</h3>
+          <h3 class="text-heading font-bold text-lg mb-3">スプレッドシート整理</h3>
           <p class="text-sub text-sm leading-relaxed">関数の修正・プルダウン設定・条件付き書式・集計グラフ化。「なんとなく使っている表」を、実際に使いやすい形に整えます。</p>
         </div>
         <!-- サービスカード② フォーム×自動通知 -->
-        <div class="service-card fade-in p-8 rounded-xl border border-white/10">
+        <div class="service-card soft-card fade-in p-8 rounded-2xl">
           <div class="text-accent text-3xl mb-5"><i class="fas fa-bell"></i></div>
-          <h3 class="text-white font-bold text-lg mb-3">フォーム × 自動通知の仕組みづくり</h3>
+          <h3 class="text-heading font-bold text-lg mb-3">フォーム × 自動通知の仕組みづくり</h3>
           <p class="text-sub text-sm leading-relaxed">Googleフォームとスプレッドシートを連携し、回答が来たらLINEやメールに自動で通知する仕組みを作ります。</p>
         </div>
         <!-- サービスカード③ GAS自動化 -->
-        <div class="service-card fade-in p-8 rounded-xl border border-white/10">
+        <div class="service-card soft-card fade-in p-8 rounded-2xl">
           <div class="text-accent text-3xl mb-5"><i class="fas fa-robot"></i></div>
-          <h3 class="text-white font-bold text-lg mb-3">GAS 定型作業の自動化</h3>
+          <h3 class="text-heading font-bold text-lg mb-3">GAS 定型作業の自動化</h3>
           <p class="text-sub text-sm leading-relaxed">Google Apps Script を使い、毎日同じことをする手作業を自動化します。「毎朝コピペしている作業」などご相談ください。</p>
         </div>
-        <!-- サービスカード④ HP修正 -->
-        <div class="service-card fade-in p-8 rounded-xl border border-white/10">
+        <!-- サービスカード④ かんたんなサイト制作・修正 -->
+        <div class="service-card soft-card fade-in p-8 rounded-2xl">
           <div class="text-accent text-3xl mb-5"><i class="fas fa-laptop-code"></i></div>
-          <h3 class="text-white font-bold text-lg mb-3">かんたんなサイト制作・修正</h3>
+          <h3 class="text-heading font-bold text-lg mb-3">かんたんなサイト制作・修正</h3>
           <p class="text-sub text-sm leading-relaxed">1ページのシンプルなサイトやランディングページなら、制作からお引き受けします。既存サイトの「ここだけ直したい」という小さな修正・更新ももちろん歓迎です。</p>
         </div>
       </div>
@@ -196,14 +200,14 @@
   <section id="works" class="py-24 bg-section">
     <div class="max-w-5xl mx-auto px-4">
       <div class="fade-in text-center mb-16">
-        <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Works</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">制作実績</h2>
+        <p class="font-hand text-accent text-lg mb-2">Works</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-heading">制作実績</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-6">
 
         <!-- 実績① DXシステム販売ページ（公開済み） -->
-        <div class="work-card fade-in rounded-xl overflow-hidden border border-white/10">
+        <div class="work-card soft-card fade-in rounded-2xl overflow-hidden">
           <img src="images/work-dx.png" alt="DX・Web制作サービス LP">
           <div class="p-6">
             <div class="flex flex-wrap gap-2 mb-3">
@@ -212,7 +216,7 @@
               <span class="tech-tag">HTML</span>
               <span class="tech-tag">CSS</span>
             </div>
-            <h3 class="text-white font-bold text-lg mb-2">DX・Web制作サービス LP</h3>
+            <h3 class="text-heading font-bold text-lg mb-2">DX・Web制作サービス LP</h3>
             <p class="text-sub text-sm leading-relaxed mb-4">
               Web制作・業務DXサービスのランディングページを個人制作。Astro + TailwindCSS で実装し Cloudflare Pages で公開。
             </p>
@@ -220,13 +224,13 @@
               <a href="https://rainbow-dx.wilier30.workers.dev/"
                  target="_blank"
                  rel="noopener noreferrer"
-                 class="inline-flex items-center gap-2 text-accent hover:text-accent-h text-sm font-semibold transition-colors">
+                 class="inline-flex items-center gap-2 text-accent hover:text-accent-h text-sm font-bold transition-colors">
                 サイトを見る <i class="fas fa-external-link-alt text-xs"></i>
               </a>
               <a href="https://github.com/wilier300227-oss/dx-lp"
                  target="_blank"
                  rel="noopener noreferrer"
-                 class="inline-flex items-center gap-2 text-sub hover:text-white text-sm transition-colors">
+                 class="inline-flex items-center gap-2 text-sub hover:text-heading text-sm transition-colors">
                 <i class="fab fa-github"></i> GitHub
               </a>
             </div>
@@ -234,7 +238,7 @@
         </div>
 
         <!-- 実績② スプレッドシート整理サンプル（公開済み） -->
-        <div class="work-card fade-in rounded-xl overflow-hidden border border-white/10">
+        <div class="work-card soft-card fade-in rounded-2xl overflow-hidden">
           <img src="images/work-spreadsheet.png" alt="売上管理スプレッドシート デモ">
           <div class="p-6">
             <div class="flex flex-wrap gap-2 mb-3">
@@ -243,23 +247,23 @@
               <span class="tech-tag">関数</span>
               <span class="tech-tag">条件付き書式</span>
             </div>
-            <h3 class="text-white font-bold text-lg mb-2">売上管理スプレッドシート</h3>
+            <h3 class="text-heading font-bold text-lg mb-2">売上管理スプレッドシート</h3>
             <p class="text-sub text-sm leading-relaxed mb-4">
               プルダウン入力・条件付き書式（達成/未達の自動色分け）・SUMIF集計・グラフ自動生成を組み込んだ業務用シート。GASで一括生成しています。
             </p>
             <a href="https://docs.google.com/spreadsheets/d/1eZihpxO8mPvhS5sYRA93KMPmNcGuLeEAMy8R3As0XgU/edit?usp=sharing"
                target="_blank"
                rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 text-accent hover:text-accent-h text-sm font-semibold transition-colors">
+               class="inline-flex items-center gap-2 text-accent hover:text-accent-h text-sm font-bold transition-colors">
               デモを見る <i class="fas fa-external-link-alt text-xs"></i>
             </a>
           </div>
         </div>
 
-        <!-- 実績③ GAS自動化サンプル（準備中） -->
-        <div class="work-card fade-in rounded-xl overflow-hidden border border-white/10">
+        <!-- 実績③ GAS自動化サンプル -->
+        <div class="work-card soft-card fade-in rounded-2xl overflow-hidden">
           <!-- コードのみの実績のため、処理フローをアイコンで表現 -->
-          <div class="work-img bg-base flex items-center justify-center gap-3 text-2xl">
+          <div class="work-img bg-section flex items-center justify-center gap-3 text-2xl">
             <i class="fas fa-pen-to-square text-accent"></i>
             <i class="fas fa-arrow-right text-sub text-sm"></i>
             <i class="fas fa-table-cells text-accent"></i>
@@ -272,21 +276,21 @@
               <span class="tech-tag">Google Forms</span>
               <span class="tech-tag">LINE API</span>
             </div>
-            <h3 class="text-white font-bold text-lg mb-2">フォーム → LINE通知の自動化</h3>
+            <h3 class="text-heading font-bold text-lg mb-2">フォーム → LINE通知の自動化</h3>
             <p class="text-sub text-sm leading-relaxed mb-4">
               Googleフォーム送信を起点に、回答をスプレッドシート記録＋LINE通知する自動化スクリプト。トークンはPropertiesServiceで安全に管理しています。
             </p>
             <a href="https://github.com/wilier300227-oss/gas-form-line-notify"
                target="_blank"
                rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 text-accent hover:text-accent-h text-sm font-semibold transition-colors">
+               class="inline-flex items-center gap-2 text-accent hover:text-accent-h text-sm font-bold transition-colors">
               コードを見る <i class="fab fa-github text-xs"></i>
             </a>
           </div>
         </div>
 
         <!-- 実績④ jimoty-alert（個人運用ツール・アーキテクチャ図で掲載） -->
-        <div class="work-card fade-in rounded-xl overflow-hidden border border-white/10">
+        <div class="work-card soft-card fade-in rounded-2xl overflow-hidden">
           <img src="images/work-jimoty.svg" alt="jimoty-alert 処理フロー図">
           <div class="p-6">
             <div class="flex flex-wrap gap-2 mb-3">
@@ -296,7 +300,7 @@
               <span class="tech-tag">並列処理</span>
               <span class="tech-tag">SQLite</span>
             </div>
-            <h3 class="text-white font-bold text-lg mb-2">jimoty-alert</h3>
+            <h3 class="text-heading font-bold text-lg mb-2">jimoty-alert</h3>
             <p class="text-sub text-sm leading-relaxed mb-4">
               もともと自分用に作ったツール。ジモティーの新着投稿をGemini Vision AIで解析し、フリマ相場と照合してLINEに通知します。15カテゴリを並列で巡回し、24時間自動で動かしています。
             </p>
@@ -305,7 +309,7 @@
         </div>
 
         <!-- 実績⑤ RAINBOW合同会社HP（公開済み） -->
-        <div class="work-card fade-in rounded-xl overflow-hidden border border-white/10">
+        <div class="work-card soft-card fade-in rounded-2xl overflow-hidden">
           <img src="images/work-rainbow-hp.png" alt="RAINBOW合同会社 コーポレートサイト">
           <div class="p-6">
             <div class="flex flex-wrap gap-2 mb-3">
@@ -315,21 +319,21 @@
               <span class="tech-tag">GSAP</span>
               <span class="tech-tag">TailwindCSS</span>
             </div>
-            <h3 class="text-white font-bold text-lg mb-2">RAINBOW合同会社 コーポレートサイト</h3>
+            <h3 class="text-heading font-bold text-lg mb-2">RAINBOW合同会社 コーポレートサイト</h3>
             <p class="text-sub text-sm leading-relaxed mb-4">
               架空のEC事業会社のコーポレートサイト。GSAPによるイントロアニメーション・日英切替・スクロールリビール・お問い合わせフォームを実装。
             </p>
             <a href="https://wilier300227-oss.github.io/rainbow-company-hp/"
                target="_blank"
                rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 text-accent hover:text-accent-h text-sm font-semibold transition-colors">
+               class="inline-flex items-center gap-2 text-accent hover:text-accent-h text-sm font-bold transition-colors">
               サイトを見る <i class="fas fa-external-link-alt text-xs"></i>
             </a>
           </div>
         </div>
 
         <!-- 実績⑥ おんぷチャレンジ（個人制作アプリ・スクリーンショットで掲載） -->
-        <div class="work-card fade-in rounded-xl overflow-hidden border border-white/10">
+        <div class="work-card soft-card fade-in rounded-2xl overflow-hidden">
           <img src="images/work-onpu.png" alt="おんぷチャレンジ アプリ画面">
           <div class="p-6">
             <div class="flex flex-wrap gap-2 mb-3">
@@ -340,7 +344,7 @@
               <span class="tech-tag">音声認識(SVM)</span>
               <span class="tech-tag">PWA</span>
             </div>
-            <h3 class="text-white font-bold text-lg mb-2">おんぷチャレンジ</h3>
+            <h3 class="text-heading font-bold text-lg mb-2">おんぷチャレンジ</h3>
             <p class="text-sub text-sm leading-relaxed mb-4">
               「楽しく続けられる音符の教材があったらいいな」と思って作った、子ども向けの学習アプリ。五線譜の音符をタッチ＆音声で答えて、ご褒美シールを集めます。Canvasで譜面描画、機械学習(SVM)で音声判定、PWAでオフライン対応。
             </p>
@@ -355,8 +359,8 @@
   <!-- ========== お問い合わせセクション ========== -->
   <section id="contact" class="py-24 bg-base text-center">
     <div class="max-w-2xl mx-auto px-4 fade-in">
-      <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Contact</p>
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">お仕事のご依頼</h2>
+      <p class="font-hand text-accent text-lg mb-2">Contact</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-heading mb-6">お仕事のご依頼</h2>
       <p class="text-sub leading-relaxed mb-10">
         「こんな小さなこと、頼んでいいのかな」と思うようなことでも大丈夫です。<br>
         まずは気軽に声をかけてください。クラウドワークスからご連絡いただけたら嬉しいです。
@@ -365,7 +369,7 @@
       <a href="https://crowdworks.jp/public/employees/6871635"
          target="_blank"
          rel="noopener noreferrer"
-         class="inline-block bg-accent hover:bg-accent-h text-white font-semibold px-10 py-4 rounded-lg transition-colors duration-200 text-base">
+         class="btn-accent inline-block bg-accent hover:bg-accent-h text-white font-bold px-10 py-4 rounded-xl transition-colors duration-200 text-base">
         クラウドワークスのプロフィールへ
         <i class="fas fa-arrow-right ml-2"></i>
       </a>
@@ -373,7 +377,8 @@
   </section>
 
   <!-- フッター -->
-  <footer class="bg-section border-t border-white/10 py-8 text-center">
+  <footer class="bg-section border-t border-line py-8 text-center">
+    <p class="signature text-xl mb-2">—— RAINBOW工房 中の人より</p>
     <p class="text-sub text-sm">© 2026 RAINBOW工房. All rights reserved.</p>
   </footer>
 

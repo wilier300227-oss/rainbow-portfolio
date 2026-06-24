@@ -2,16 +2,19 @@
    このファイルの役割：
    ポートフォリオサイト全体のカスタムスタイル
    Tailwind CDN で対応できない細かい調整をここで行う
+   ── 温かみのある「紙・ノート風」テーマ ──
    ============================================================ */
 
 /* ── 色の変更はここを編集する ── */
 :root {
-  --color-base:    #1a1a2e;
-  --color-section: #16213e;
-  --color-accent:  #4f46e5;
-  --color-accent-h:#6366f1;
-  --color-body:    #e2e8f0;
-  --color-sub:     #94a3b8;
+  --color-bg:      #faf6f0; /* クリーム（ベース背景） */
+  --color-bg-alt:  #f3ece1; /* 一段濃いクリーム（交互セクション） */
+  --color-surface: #fffdf9; /* カードの紙色（ほぼ白） */
+  --color-text:    #2d2a26; /* こげ茶（本文） */
+  --color-sub:     #6f655a; /* くすんだ茶（サブテキスト） */
+  --color-accent:  #c2703d; /* テラコッタ（アクセント） */
+  --color-accent-h:#a85a2c; /* 濃いテラコッタ（ホバー） */
+  --color-line:    rgba(45, 42, 38, 0.10); /* やわらかい境界線 */
 }
 
 html {
@@ -19,9 +22,17 @@ html {
 }
 
 body {
-  background-color: var(--color-base);
-  color: var(--color-body);
-  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
+  /* ほのかな紙のドット質感 */
+  background-image: radial-gradient(rgba(45, 42, 38, 0.035) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ── 手書き風フォント（見出し小・署名・アクセント） ── */
+.font-hand {
+  font-family: 'Yomogi', cursive;
 }
 
 /* ── ナビゲーション：スクロールで背景を出す ── */
@@ -30,20 +41,19 @@ body {
 }
 
 #navbar.scrolled {
-  background-color: rgba(26, 26, 46, 0.95);
+  background-color: rgba(250, 246, 240, 0.92);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--color-line);
+  box-shadow: 0 2px 16px rgba(45, 42, 38, 0.05);
 }
 
 /* ── スクロールアニメーション ── */
-/* 初期状態：下にずれて非表示 */
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Intersection Observer が付与するクラス：表示状態 */
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
@@ -55,12 +65,10 @@ body {
 .grid .fade-in:nth-child(4) { transition-delay: 0.3s; }
 
 /* ── 実績カード：サムネイルエリア ── */
-/* ▼ 高さを変えたい場合はここを編集する */
 .work-img {
   height: 200px;
 }
 
-/* ▼ 差し替え後のスクリーンショット表示設定 */
 .work-card img {
   width: 100%;
   height: 200px;
@@ -69,59 +77,37 @@ body {
 
 /* ── テクノロジータグ ── */
 .tech-tag {
-  background-color: rgba(79, 70, 229, 0.15);
-  color: #818cf8;
+  background-color: rgba(194, 112, 61, 0.10);
+  color: #a85a2c;
   font-size: 0.7rem;
   font-weight: 600;
   padding: 0.2rem 0.6rem;
   border-radius: 9999px;
-  border: 1px solid rgba(79, 70, 229, 0.3);
+  border: 1px solid rgba(194, 112, 61, 0.25);
 }
 
-/* ── サービスカード ── */
-.service-card {
-  background-color: var(--color-section);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+/* ── カード共通：紙のような白＋やわらかい影 ── */
+.soft-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  box-shadow: 0 6px 22px rgba(45, 42, 38, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.service-card:hover {
-  border-color: rgba(79, 70, 229, 0.5);
-  transform: translateY(-2px);
+.soft-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(45, 42, 38, 0.11);
 }
 
-/* ── 強みカード ── */
-.strength-card {
-  background-color: rgba(255, 255, 255, 0.03);
-  transition: border-color 0.2s ease;
-}
-
-.strength-card:hover {
-  border-color: rgba(79, 70, 229, 0.4);
-}
-
-/* ── 実績カード ── */
-.work-card {
-  background-color: var(--color-base);
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-/* 準備中カード以外にホバー効果 */
-.work-card:not(.work-card-wip):hover {
-  border-color: rgba(79, 70, 229, 0.5);
-  transform: translateY(-2px);
-}
-
-/* 準備中カードは薄く表示 */
-.work-card-wip {
-  opacity: 0.55;
-}
-
-/* ── 準備中バッジ ── */
-.wip-badge {
+/* ── 手書き署名 ── */
+.signature {
+  font-family: 'Yomogi', cursive;
+  color: var(--color-accent);
   display: inline-block;
-  color: var(--color-sub);
-  font-size: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.2rem 0.8rem;
-  border-radius: 9999px;
+  transform: rotate(-2deg);
+}
+
+/* ── ボタンのやわらかい影 ── */
+.btn-accent {
+  box-shadow: 0 6px 18px rgba(194, 112, 61, 0.28);
 }
