@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16213e"/>
+      <stop offset="1" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f2a4d"/>
+      <stop offset="1" stop-color="#172138"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#6366f1"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1000" height="400" fill="url(#bg)"/>
+
+  <!-- タイトル -->
+  <text x="44" y="56" fill="#e2e8f0" font-size="28" font-weight="700">リユース品 価格調査ツール</text>
+  <text x="44" y="86" fill="#94a3b8" font-size="16">ジモティー新着を AI で解析し、相場照合のうえ LINE 通知する自動パイプライン</text>
+
+  <!-- ステップ4つ -->
+  <!-- STEP1 -->
+  <g>
+    <rect x="44" y="128" width="205" height="160" rx="14" fill="url(#box)" stroke="#4f46e5" stroke-width="1.5"/>
+    <circle cx="76" cy="162" r="15" fill="#4f46e5"/>
+    <text x="76" y="167" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">1</text>
+    <text x="102" y="167" fill="#e2e8f0" font-size="17" font-weight="700">新着監視</text>
+    <text x="66" y="206" fill="#cbd5e1" font-size="14">石川・富山</text>
+    <text x="66" y="229" fill="#cbd5e1" font-size="14">15カテゴリを</text>
+    <text x="66" y="252" fill="#cbd5e1" font-size="14">並列巡回（30秒）</text>
+    <text x="66" y="276" fill="#6366f1" font-size="12" font-weight="700">requests / BS4</text>
+  </g>
+
+  <!-- STEP2 -->
+  <g>
+    <rect x="295" y="128" width="205" height="160" rx="14" fill="url(#box)" stroke="#4f46e5" stroke-width="1.5"/>
+    <circle cx="327" cy="162" r="15" fill="#4f46e5"/>
+    <text x="327" y="167" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">2</text>
+    <text x="353" y="167" fill="#e2e8f0" font-size="17" font-weight="700">AI画像解析</text>
+    <text x="317" y="206" fill="#cbd5e1" font-size="14">商品画像から</text>
+    <text x="317" y="229" fill="#cbd5e1" font-size="14">ブランド・型番</text>
+    <text x="317" y="252" fill="#cbd5e1" font-size="14">を自動特定</text>
+    <text x="317" y="276" fill="#6366f1" font-size="12" font-weight="700">Gemini Vision</text>
+  </g>
+
+  <!-- STEP3 -->
+  <g>
+    <rect x="546" y="128" width="205" height="160" rx="14" fill="url(#box)" stroke="#4f46e5" stroke-width="1.5"/>
+    <circle cx="578" cy="162" r="15" fill="#4f46e5"/>
+    <text x="578" y="167" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">3</text>
+    <text x="604" y="167" fill="#e2e8f0" font-size="17" font-weight="700">相場照合</text>
+    <text x="568" y="206" fill="#cbd5e1" font-size="14">成約データと</text>
+    <text x="568" y="229" fill="#cbd5e1" font-size="14">突合し価格差を</text>
+    <text x="568" y="252" fill="#cbd5e1" font-size="14">自動算出</text>
+    <text x="568" y="276" fill="#6366f1" font-size="12" font-weight="700">SQLite キャッシュ</text>
+  </g>
+
+  <!-- STEP4 -->
+  <g>
+    <rect x="797" y="128" width="205" height="160" rx="14" fill="url(#box)" stroke="#06C755" stroke-width="1.5"/>
+    <circle cx="829" cy="162" r="15" fill="#06C755"/>
+    <text x="829" y="167" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">4</text>
+    <text x="855" y="167" fill="#e2e8f0" font-size="17" font-weight="700">LINE通知</text>
+    <text x="819" y="206" fill="#cbd5e1" font-size="14">条件に合う</text>
+    <text x="819" y="229" fill="#cbd5e1" font-size="14">商品のみ</text>
+    <text x="819" y="252" fill="#cbd5e1" font-size="14">即時にプッシュ</text>
+    <text x="819" y="276" fill="#06C755" font-size="12" font-weight="700">Messaging API</text>
+  </g>
+
+  <!-- 矢印 -->
+  <line x1="251" y1="208" x2="291" y2="208" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="502" y1="208" x2="542" y2="208" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="753" y1="208" x2="793" y2="208" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- フッター：技術スタック -->
+  <text x="44" y="344" fill="#64748b" font-size="14">Python 3.13 ・ ThreadPoolExecutor（最大8並列）・ ログ自動ローテーション ・ 自己監視アラート</text>
+  <text x="44" y="374" fill="#475569" font-size="13">※ 個人運用ツール（リポジトリ非公開）。技術構成のみ掲載しています。</text>
+</svg>
