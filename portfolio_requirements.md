@@ -153,12 +153,15 @@ works/
 
 ### 実績⑥：おんぷチャレンジ
 - **内容**：子供向け音符学習アプリ（Web PWA版）
-- **場所**：`C:\Users\81909\OneDrive\piano.zip`（解凍先：`piano/`）
-- **現状**：Python + Tkinter のデスクトップ版が動作中。Web版の設計書（WEB_APP_PLAN.md）あり
+- **場所（元）**：`C:\Users\81909\OneDrive\piano.zip`（Web版は `piano/web/` に完成済み）
+- **作業用クリーンフォルダ**：`C:\Users\81909\Desktop\onpu-challenge\`（Web版をnode_modules/.git除外でコピー＋著作権修正済み）
 - **公開方法**：リポジトリはPrivate（コード非公開）。ポートフォリオには動作スクリーンショット＋技術スタック＋説明文のみ
-- **ブロッカー**：シール素材に著作権のあるものが含まれている → 著作権フリー素材に差し替えが必要
+- **著作権対応（完了）**：シール4種がサンリオキャラ（クロミ/シナモロール/マイメロディ/ポムポムプリン）だった → 完全オリジナルのメダルバッジ（金の星/緑の音符/赤の稲妻/紫の王冠）に差し替え済み（`onpu-challenge/stickers/*.png`）。生成スクリプトは scratchpad の `gen_stickers.py`
+- **要注意（未対応）**：デスクトップ版（Tkinter `piano/app.py`）とルートの `sticker_book_preview.png` にも同じ著作権シールが残る。Web版のみ修正済み。フル公開時は要差し替え
+- **PWAアイコン**：`icon-192/512.png` は白い音符のオリジナル（問題なし）
 - **技術タグ**：HTML / JS / Canvas / Web Audio / SVM（音声認識）/ PWA
-- **状態**：著作権修正 + Web版実装 が必要（リポジトリはPrivate運用）
+- **ポートフォリオ素材**：`works/images/work-onpu.png`（ゲーム画面＋シール帳のスマホ2画面合成）
+- **状態**：✅ 著作権修正完了・Web版完成・⑥カード掲載完了。残：Privateリポジトリへのpush（任意）
 
 ---
 
