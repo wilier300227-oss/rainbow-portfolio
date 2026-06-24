@@ -1,0 +1,127 @@
+/* ============================================================
+   このファイルの役割：
+   ポートフォリオサイト全体のカスタムスタイル
+   Tailwind CDN で対応できない細かい調整をここで行う
+   ============================================================ */
+
+/* ── 色の変更はここを編集する ── */
+:root {
+  --color-base:    #1a1a2e;
+  --color-section: #16213e;
+  --color-accent:  #4f46e5;
+  --color-accent-h:#6366f1;
+  --color-body:    #e2e8f0;
+  --color-sub:     #94a3b8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-body);
+  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+}
+
+/* ── ナビゲーション：スクロールで背景を出す ── */
+#navbar {
+  background-color: transparent;
+}
+
+#navbar.scrolled {
+  background-color: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── スクロールアニメーション ── */
+/* 初期状態：下にずれて非表示 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Intersection Observer が付与するクラス：表示状態 */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* カードを順番に少しずつ遅らせて表示 */
+.grid .fade-in:nth-child(2) { transition-delay: 0.1s; }
+.grid .fade-in:nth-child(3) { transition-delay: 0.2s; }
+.grid .fade-in:nth-child(4) { transition-delay: 0.3s; }
+
+/* ── 実績カード：サムネイルエリア ── */
+/* ▼ 高さを変えたい場合はここを編集する */
+.work-img {
+  height: 200px;
+}
+
+/* ▼ 差し替え後のスクリーンショット表示設定 */
+.work-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ── テクノロジータグ ── */
+.tech-tag {
+  background-color: rgba(79, 70, 229, 0.15);
+  color: #818cf8;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+/* ── サービスカード ── */
+.service-card {
+  background-color: var(--color-section);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover {
+  border-color: rgba(79, 70, 229, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ── 強みカード ── */
+.strength-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease;
+}
+
+.strength-card:hover {
+  border-color: rgba(79, 70, 229, 0.4);
+}
+
+/* ── 実績カード ── */
+.work-card {
+  background-color: var(--color-base);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* 準備中カード以外にホバー効果 */
+.work-card:not(.work-card-wip):hover {
+  border-color: rgba(79, 70, 229, 0.5);
+  transform: translateY(-2px);
+}
+
+/* 準備中カードは薄く表示 */
+.work-card-wip {
+  opacity: 0.55;
+}
+
+/* ── 準備中バッジ ── */
+.wip-badge {
+  display: inline-block;
+  color: var(--color-sub);
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.8rem;
+  border-radius: 9999px;
+}

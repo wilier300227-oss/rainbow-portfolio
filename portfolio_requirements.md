@@ -1,0 +1,229 @@
+# ポートフォリオサイト 要件定義・ロードマップ
+# 作成：2026年6月24日（Claude Codeによるgrilling要件定義セッション）
+
+---
+
+## 0. このファイルの使い方
+
+別のClaude Codeセッションに渡して作業を引き継ぐ。
+このファイルを読めばgrilling要件定義の全決定事項が把握できる。
+
+---
+
+## 1. プロジェクト概要
+
+| 項目 | 内容 |
+|------|------|
+| 屋号 | RAINBOW工房（クラウドワークス表示名） |
+| 形態 | 個人事業主 |
+| 所在 | 石川県かほく市 |
+| 目的 | クラウドワークス発注者向けポートフォリオ兼名刺 |
+| 公開先 | GitHub Pages |
+| GitHubアカウント | wilier300227-oss |
+| リポジトリ名 | rainbow-portfolio |
+| 公開URL（予定） | https://wilier300227-oss.github.io/rainbow-portfolio/ |
+| クラウドワークスURL | https://crowdworks.jp/public/employees/6871635?ref=login_header |
+
+---
+
+## 2. 確定した要件（grilling Q&A結果）
+
+### サイト目的
+- クラウドワークスのプロフィールURLからこのサイトに来た発注者が、信頼を深めてクラウドワークスに戻って依頼する導線
+- クラウドワークスのプロフィール機能では表現しきれないデザイン・実績詳細・人となりを見せる
+
+### 公開方針
+- **すべての実績が完成してから公開**
+- 目標：2週間（8時間/日）で全完成
+
+### 技術構成
+- 純粋なHTML / CSS / JS（フレームワーク・ビルドツール不要）
+- 外部CDN：Tailwind CDN・Font Awesome・Google Fonts
+- 本人がHTMLを学習中のため、後から自分で直せることが重要
+
+### デザイン仕様
+| 用途 | 色 |
+|------|----|
+| ベース背景 | `#1a1a2e` |
+| セクション背景（交互） | `#16213e` |
+| アクセント | `#4f46e5` |
+| アクセント（ホバー） | `#6366f1` |
+| 本文テキスト | `#e2e8f0` |
+| サブテキスト | `#94a3b8` |
+| 見出し | `#ffffff` |
+
+- フォント：Noto Sans JP（日本語）+ Inter（英数字）
+- トーン：誠実・丁寧・現場目線。アニメーションは控えめ（フェードイン程度）
+- RAINBOW合同会社HP（派手・虹色）とは別世界観にする
+
+### ページ構成
+1ページ構成（スクロール）：`#hero` → `#about` → `#services` → `#works` → `#contact`
+
+### コード規約
+- コメントは**日本語**で書く
+- 各ファイル冒頭に「このファイルの役割」を日本語コメントで書く
+- 変更しやすい箇所にコメントを入れる
+- ファイル構成：`index.html` / `css/style.css` / `js/main.js` / `images/`
+
+---
+
+## 3. 現在の骨格ファイル
+
+`C:\Users\81909\Desktop\works\` に以下が存在（別セッションで作成済み）：
+
+```
+works/
+  index.html    ← 骨格ほぼ完成（hero/about/services/works/contact全あり）
+  css/style.css
+  js/main.js
+  images/       ← 空（スクリーンショットは本人が後で差し替え）
+```
+
+**index.htmlの現状：**
+- クラウドワークスURLはすでに正しく埋め込み済み
+- 実績カード4枠（①〜④）あり。②③④は「準備中」表示
+- ④jimoty-alertの説明文に「転売」の表記あり → 修正必要
+- ⑤RAINBOW HP・⑥おんぷチャレンジのカードはまだない
+
+---
+
+## 4. 制作実績一覧（6件）
+
+### 実績①：DXシステム販売ページ（個人再制作）
+- **内容**：職業訓練グループ制作版を参考に、個人で一から再制作
+- **注意**：グループ制作版（custom_ec_site）のコードは直接使わない。構成・デザインの参考のみ
+- **技術タグ**：Astro / TailwindCSS / HTML / CSS
+- **状態**：未着手（再制作必要）
+
+### 実績②：スプレッドシート整理デモ
+- **内容**：関数・条件付き書式・プルダウン・集計グラフを活用したサンプルシート
+- **公開方法**：Googleスプレッドシートの共有リンク
+- **技術タグ**：Google Sheets
+- **状態**：未着手
+
+### 実績③：GAS自動化デモ
+- **内容**：Googleフォーム送信 → スプレッドシート記録 → LINE通知、の自動化フロー
+- **公開方法**：GitHubにコード公開 + README + Googleスプレッドシート共有リンク
+- **注意**：GASコードにLINEトークン等をハードコードしない
+- **技術タグ**：GAS / Google Forms / LINE API
+- **状態**：未着手
+
+### 実績④：jimoty-alert（リユース品価格調査ツール）
+- **説明文**（確定）：
+  「ジモティーの新着投稿をGemini Vision AIで自動解析し、フリマ相場と照合・LINE通知するリユース品価格調査ツールを開発・運用中」
+- **注意**：「転売」という表現は使わない。「リユース品価格調査」に統一
+- **技術タグ**：Python / Gemini Vision API / LINE Messaging API / Playwright / SQLite
+- **場所**：`C:\Users\81909\Desktop\jimoty-alert\`
+- **GitHubリポジトリ**：wilier300227-oss（別リポジトリで公開）
+- **セキュリティ対応済み**：`.gitignore`・`.env.example` 作成済み
+- **現在の稼働状況**：稼働中（Facebook機能は一時無効化中）
+- **状態**：README作成 + GitHub push のみ必要
+
+### 実績⑤：RAINBOW合同会社サイト
+- **内容**：個人制作の架空会社HP。GSAP・アニメーション重め
+- **場所**：`C:\Users\81909\Desktop\RAINBOW（HP）\HTML\`（または解凍先）
+- **技術タグ**：HTML / CSS / JS / GSAP / TailwindCDN / jQuery
+- **確認事項**：個人情報・住所・電話番号・外部APIキーがないか確認してから公開
+- **状態**：セキュリティ確認 + GitHub push + GitHub Pages公開 が必要
+
+### 実績⑥：おんぷチャレンジ
+- **内容**：子供向け音符学習アプリ（Web PWA版）
+- **場所**：`C:\Users\81909\OneDrive\piano.zip`（解凍先：`piano/`）
+- **現状**：Python + Tkinter のデスクトップ版が動作中。Web版の設計書（WEB_APP_PLAN.md）あり
+- **ブロッカー**：シール素材に著作権のあるものが含まれている → 著作権フリー素材に差し替えが必要
+- **技術タグ**：HTML / JS / Canvas / Web Audio / SVM（音声認識）/ PWA
+- **状態**：著作権修正 + Web版実装 が必要
+
+---
+
+## 5. 各制作物 セキュリティ・品質チェックリスト
+
+### jimoty-alert（`C:\Users\81909\Desktop\jimoty-alert\`）
+- [x] `.gitignore` 作成済み（.env / fb_session.json / *.db / logs/ 除外）
+- [x] `.env.example` 作成済み（ダミー値入り）
+- [ ] README.md 作成
+- [ ] GitHub push
+- [ ] `[Flash] 自転車チェック失敗: 'parts'` 警告の修正（後回し可）
+- [ ] Facebook機能の恒久対応（後回し可）
+
+### RAINBOW合同会社サイト
+- [ ] 個人情報（本名・住所・電話番号）が含まれていないか確認
+- [ ] JSファイルにAPIキー・パスワードがハードコードされていないか確認
+- [ ] 未完成箇所の洗い出し・修正
+- [ ] GitHub push / GitHub Pages公開
+
+### おんぷチャレンジ
+- [ ] 著作権のあるシール素材を著作権フリーのものに差し替え
+- [ ] Pythonコード内にAPIキー・個人情報がないか確認
+- [ ] Web版実装
+- [ ] GitHub push / GitHub Pages公開
+
+### GASデモ
+- [ ] LINEトークンをPropertiesServiceで管理（ハードコード禁止）
+- [ ] スプレッドシートに個人情報を入れない
+
+---
+
+## 6. 2週間ロードマップ（8時間/日）
+
+### Week 1 ── 公開・実績を揃える
+
+| 日 | 作業内容 | 完了目標 |
+|----|---------|---------|
+| Day 1 | GitHubリポジトリ作成 → worksフォルダpush → jimoty-alert README作成・説明文修正・GitHub push → GitHub Pages有効化・暫定公開 | ④公開・サイト暫定稼働 |
+| Day 2 | RAINBOW HP 未完成箇所の洗い出し・修正（個人情報・APIキー・デザイン） | RAINBOW HP修正完了 |
+| Day 3 | RAINBOW HP セキュリティ最終確認 → GitHub push → ポートフォリオに⑤カード追加・公開 | ⑤公開 |
+| Day 4 | スプレッドシート整理デモ作成・共有リンク取得 → ポートフォリオ更新 | ②公開 |
+| Day 5 | GASデモ作成・GitHub push・README → ポートフォリオ更新 | ③公開 |
+| Day 6 | DXページ個人再制作（前半：構成・ヒーロー・3ステップ） | 前半完成 |
+| Day 7 | DXページ個人再制作（後半：サービスカード・仕上げ）→ ポートフォリオ更新 | ①公開 |
+
+**Week 1終了時点：実績①〜⑤が揃った状態でポートフォリオ公開**
+
+### Week 2 ── おんぷチャレンジ完成
+
+| 日 | 作業内容 | 完了目標 |
+|----|---------|---------|
+| Day 8  | 著作権フリーシール素材の選定・差し替え → Web版フェーズ0（雛形・PWA設定・音声アセット配置） | 素材問題解決・雛形完成 |
+| Day 9  | Web版フェーズ1前半：五線譜Canvas描画・音符出題ロジック | 譜面表示完成 |
+| Day 10 | Web版フェーズ1後半：タッチボタン（ド〜シ）・採点・タイム・シール帳 | タッチ操作でフルプレイ可能 |
+| Day 11 | Web版フェーズ2：音声入力（VAD・MFCC・SVM移植） | 音声認識動作 |
+| Day 12 | Web版フェーズ3：PWA仕上げ・レスポンシブ調整・iOS Safari対応 | スマホ動作確認 |
+| Day 13 | 全制作物セキュリティ最終チェック → おんぷチャレンジ GitHub push → ポートフォリオに⑥追加 | ⑥公開 |
+| Day 14 | ポートフォリオ全体の表示確認・文言調整・スクショ差し替え → **完成公開** | 🎉 完成 |
+
+### リスク管理
+
+| リスク | 対処 |
+|--------|------|
+| おんぷチャレンジ音声認識が重い | Day 11スキップ・タッチのみで⑥公開し音声は後回し |
+| RAINBOW HPの修正が多い | Day 3を延長・GASデモをDay 6に後ろ倒し |
+| Day 7までに①〜⑤完成しなかった | ①DXページを「準備中」のまま残してWeek 2に回す |
+
+---
+
+## 7. 次に着手するタスク
+
+**Day 1の作業（GitHubリポジトリ作成から開始）：**
+
+1. GitHubで `rainbow-portfolio` リポジトリ作成（Public）
+2. `C:\Users\81909\Desktop\works\` を git init → push
+3. `index.html` の④jimoty-alert説明文から「転売」を削除・「リユース品価格調査ツール」に修正
+4. `C:\Users\81909\Desktop\jimoty-alert\` の README.md 作成
+5. jimoty-alert リポジトリを GitHub push
+6. GitHub Pages 有効化（Settings → Pages → main/root）
+7. クラウドワークスプロフィールにURL記載
+
+---
+
+## 8. 参照ファイル一覧
+
+| ファイル | 場所 | 内容 |
+|---------|------|------|
+| 引き継ぎ文書（旧） | `C:\Users\81909\Downloads\portfolio_handoff.md` | 初期の制作方針 |
+| 職務経歴・スキル | `C:\Users\81909\Downloads\経歴、スキルまとめ(自分).md` | About・自己PR素材 |
+| ポートフォリオ骨格 | `C:\Users\81909\Desktop\works\` | index.html等（作成済み） |
+| jimoty-alert | `C:\Users\81909\Desktop\jimoty-alert\` | 稼働中・.gitignore済み |
+| RAINBOW HP | `C:\Users\81909\Desktop\RAINBOW（HP）.zip` | 個人制作会社サイト |
+| おんぷチャレンジ | `C:\Users\81909\OneDrive\piano.zip` | デスクトップ版+Web版設計書 |
+| グループDXサイト | `C:\Users\81909\Desktop\custom_ec_site.zip` | 参考のみ・コード流用不可 |
