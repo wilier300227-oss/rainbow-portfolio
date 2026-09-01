@@ -17,8 +17,8 @@
   <rect width="1000" height="400" fill="url(#bg)"/>
 
   <!-- タイトル -->
-  <text x="44" y="56" fill="#e2e8f0" font-size="28" font-weight="700">リユース品 価格調査ツール</text>
-  <text x="44" y="86" fill="#94a3b8" font-size="16">ジモティー新着を AI で解析し、相場照合のうえ LINE 通知する自動パイプライン</text>
+  <text x="44" y="56" fill="#e2e8f0" font-size="28" font-weight="700">新着監視・自動通知ツール</text>
+  <text x="44" y="86" fill="#94a3b8" font-size="16">地域情報サイトの新着を常時監視し、条件一致のみ即時通知する自動パイプライン</text>
 
   <!-- ステップ4つ -->
   <!-- STEP1 -->
@@ -27,10 +27,10 @@
     <circle cx="76" cy="162" r="15" fill="#4f46e5"/>
     <text x="76" y="167" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">1</text>
     <text x="102" y="167" fill="#e2e8f0" font-size="17" font-weight="700">新着監視</text>
-    <text x="66" y="206" fill="#cbd5e1" font-size="14">石川・富山</text>
-    <text x="66" y="229" fill="#cbd5e1" font-size="14">15カテゴリを</text>
-    <text x="66" y="252" fill="#cbd5e1" font-size="14">並列巡回（30秒）</text>
-    <text x="66" y="276" fill="#6366f1" font-size="12" font-weight="700">requests / BS4</text>
+    <text x="66" y="206" fill="#cbd5e1" font-size="14">石川・富山の</text>
+    <text x="66" y="229" fill="#cbd5e1" font-size="14">カテゴリ横断新着を</text>
+    <text x="66" y="252" fill="#cbd5e1" font-size="14">並列巡回</text>
+    <text x="66" y="276" fill="#6366f1" font-size="12" font-weight="700">requests / selectolax</text>
   </g>
 
   <!-- STEP2 -->
@@ -38,11 +38,11 @@
     <rect x="295" y="128" width="205" height="160" rx="14" fill="url(#box)" stroke="#4f46e5" stroke-width="1.5"/>
     <circle cx="327" cy="162" r="15" fill="#4f46e5"/>
     <text x="327" y="167" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">2</text>
-    <text x="353" y="167" fill="#e2e8f0" font-size="17" font-weight="700">AI画像解析</text>
-    <text x="317" y="206" fill="#cbd5e1" font-size="14">商品画像から</text>
-    <text x="317" y="229" fill="#cbd5e1" font-size="14">ブランド・型番</text>
-    <text x="317" y="252" fill="#cbd5e1" font-size="14">を自動特定</text>
-    <text x="317" y="276" fill="#6366f1" font-size="12" font-weight="700">Gemini Vision</text>
+    <text x="353" y="167" fill="#e2e8f0" font-size="17" font-weight="700">条件判定</text>
+    <text x="317" y="206" fill="#cbd5e1" font-size="14">カテゴリ・キーワード</text>
+    <text x="317" y="229" fill="#cbd5e1" font-size="14">・価格で判定し</text>
+    <text x="317" y="252" fill="#cbd5e1" font-size="14">業者投稿を除外</text>
+    <text x="317" y="276" fill="#6366f1" font-size="12" font-weight="700">独自フィルタ</text>
   </g>
 
   <!-- STEP3 -->
@@ -50,23 +50,23 @@
     <rect x="546" y="128" width="205" height="160" rx="14" fill="url(#box)" stroke="#4f46e5" stroke-width="1.5"/>
     <circle cx="578" cy="162" r="15" fill="#4f46e5"/>
     <text x="578" y="167" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">3</text>
-    <text x="604" y="167" fill="#e2e8f0" font-size="17" font-weight="700">相場照合</text>
-    <text x="568" y="206" fill="#cbd5e1" font-size="14">成約データと</text>
-    <text x="568" y="229" fill="#cbd5e1" font-size="14">突合し価格差を</text>
-    <text x="568" y="252" fill="#cbd5e1" font-size="14">自動算出</text>
-    <text x="568" y="276" fill="#6366f1" font-size="12" font-weight="700">SQLite キャッシュ</text>
+    <text x="604" y="167" fill="#e2e8f0" font-size="17" font-weight="700">既読管理</text>
+    <text x="568" y="206" fill="#cbd5e1" font-size="14">既読DBと照合し</text>
+    <text x="568" y="229" fill="#cbd5e1" font-size="14">重複通知を防止</text>
+    <text x="568" y="252" fill="#cbd5e1" font-size="14">（30日で自動削減）</text>
+    <text x="568" y="276" fill="#6366f1" font-size="12" font-weight="700">SQLite</text>
   </g>
 
   <!-- STEP4 -->
   <g>
-    <rect x="797" y="128" width="205" height="160" rx="14" fill="url(#box)" stroke="#06C755" stroke-width="1.5"/>
-    <circle cx="829" cy="162" r="15" fill="#06C755"/>
+    <rect x="797" y="128" width="205" height="160" rx="14" fill="url(#box)" stroke="#5865F2" stroke-width="1.5"/>
+    <circle cx="829" cy="162" r="15" fill="#5865F2"/>
     <text x="829" y="167" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">4</text>
-    <text x="855" y="167" fill="#e2e8f0" font-size="17" font-weight="700">LINE通知</text>
+    <text x="855" y="167" fill="#e2e8f0" font-size="17" font-weight="700">即時通知</text>
     <text x="819" y="206" fill="#cbd5e1" font-size="14">条件に合う</text>
-    <text x="819" y="229" fill="#cbd5e1" font-size="14">商品のみ</text>
-    <text x="819" y="252" fill="#cbd5e1" font-size="14">即時にプッシュ</text>
-    <text x="819" y="276" fill="#06C755" font-size="12" font-weight="700">Messaging API</text>
+    <text x="819" y="229" fill="#cbd5e1" font-size="14">投稿のみ</text>
+    <text x="819" y="252" fill="#cbd5e1" font-size="14">リッチ通知でプッシュ</text>
+    <text x="819" y="276" fill="#5865F2" font-size="12" font-weight="700">Webhook</text>
   </g>
 
   <!-- 矢印 -->
@@ -75,6 +75,6 @@
   <line x1="753" y1="208" x2="793" y2="208" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow)"/>
 
   <!-- フッター：技術スタック -->
-  <text x="44" y="344" fill="#64748b" font-size="14">Python 3.13 ・ ThreadPoolExecutor（最大8並列）・ ログ自動ローテーション ・ 自己監視アラート</text>
+  <text x="44" y="344" fill="#64748b" font-size="14">Python ・ ThreadPoolExecutor 並列取得 ・ ログ自動ローテーション ・ 自己監視アラート ・ 例外隔離で24時間常駐</text>
   <text x="44" y="374" fill="#475569" font-size="13">※ 個人運用ツール（リポジトリ非公開）。技術構成のみ掲載しています。</text>
 </svg>
